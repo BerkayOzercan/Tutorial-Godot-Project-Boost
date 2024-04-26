@@ -37,8 +37,6 @@ func _complete_level(next_level: String) -> void:
 		get_tree().change_scene_to_file.bind(next_level)
 	)
 	print("You Win!")
-	
-
 
 func _crash_sequence() -> void:
 	set_process(false)
