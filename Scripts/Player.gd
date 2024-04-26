@@ -21,12 +21,12 @@ func _press_spacebar(delta : float) -> void:
 
 func _on_body_entered(body:Node) -> void:
 	if "Goal" in body.get_groups():
-		_complete_level()
+		_complete_level(body.level_file_path)
 	elif "Hazard" in body.get_groups():
 		_crash_sequence()
 	
-func _complete_level() -> void:
-	get_tree().quit()
+func _complete_level(next_level: String) -> void:
+	get_tree().change_scene_to_file(next_level)
 	print("You Win!")
 
 
