@@ -1,12 +1,18 @@
 extends RigidBody3D
 
 ##Set the thrust power value
-@export_range(500.0, 1500.0) var thrustPower : float = 1000.0;
+@export_range(500.0, 1500.0) var thrustPower : float = 1000.0
 
 ##Set the torque power value
-@export_range(50.0, 150.0) var torquePower : float = 100.0;
+@export_range(50.0, 150.0) var torquePower : float = 100.0
+
+@onready var explosion_audio : AudioStreamPlayer = $"ExplosionAudio"
+@onready var success_audio : AudioStreamPlayer = $"SuccessAudio"
 
 var is_transitioning : bool = false
+
+func _ready() -> void:
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -36,6 +42,7 @@ func _complete_level(next_level: String) -> void:
 	tween.tween_callback(
 		get_tree().change_scene_to_file.bind(next_level)
 	)
+	success_audio.play()
 	print("You Win!")
 
 func _crash_sequence() -> void:
@@ -44,4 +51,5 @@ func _crash_sequence() -> void:
 	var tween = create_tween()
 	tween.tween_interval(1.0)
 	tween.tween_callback(get_tree().reload_current_scene)
+	explosion_audio.play()
 	print("Kaboom!")
