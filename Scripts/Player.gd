@@ -10,6 +10,10 @@ extends RigidBody3D
 @onready var success_audio : AudioStreamPlayer = $"SuccessAudio"
 @onready var rocket_audio : AudioStreamPlayer3D = $"RocketAudio"
 
+@onready var booster_particle : GPUParticles3D = $"BoosterParticles"
+@onready var booster_particle_right : GPUParticles3D = $"BoosterParticlesRight"
+@onready var booster_particle_left : GPUParticles3D = $"BoosterParticlesLeft"
+
 var is_transitioning : bool = false
 
 func _ready() -> void:
@@ -22,17 +26,24 @@ func _process(delta: float) -> void:
 func _press_spacebar(delta : float) -> void:
 	if Input.is_action_pressed("boost"):
 		apply_central_force(basis.y * delta * thrustPower)
-
+		booster_particle.emitting = true
 		if rocket_audio.playing == false:
 			rocket_audio.play()
 	else:
+		booster_particle.emitting = false
 		rocket_audio.stop()
-
-	if Input.is_action_pressed("rotate_left"):
-		apply_torque(Vector3(0.0, 0.0, torquePower * delta))
 
 	if Input.is_action_pressed("rotate_right"):
 		apply_torque(Vector3(0.0, 0.0, -torquePower * delta))
+		booster_particle_left.emitting = true
+	else:
+		booster_particle_left.emitting = false
+
+	if Input.is_action_pressed("rotate_left"):
+		apply_torque(Vector3(0.0, 0.0, torquePower * delta))
+		booster_particle_right.emitting = true
+	else:
+		booster_particle_right.emitting = false
 
 func _on_body_entered(body:Node) -> void:
 	if is_transitioning == false:
