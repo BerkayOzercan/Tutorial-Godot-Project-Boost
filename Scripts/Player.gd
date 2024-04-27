@@ -13,13 +13,11 @@ extends RigidBody3D
 @onready var booster_particle : GPUParticles3D = $"BoosterParticles"
 @onready var booster_particle_right : GPUParticles3D = $"BoosterParticlesRight"
 @onready var booster_particle_left : GPUParticles3D = $"BoosterParticlesLeft"
+@onready var explosion_particle : GPUParticles3D = $"ExplosionParticles"
+@onready var success_particle : GPUParticles3D = $"SuccessParticles"
 
 var is_transitioning : bool = false
 
-func _ready() -> void:
-	pass
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	_press_spacebar(delta)
 
@@ -61,7 +59,7 @@ func _complete_level(next_level: String) -> void:
 		get_tree().change_scene_to_file.bind(next_level)
 	)
 	success_audio.play()
-	print("You Win!")
+	success_particle.emitting = true
 
 func _crash_sequence() -> void:
 	set_process(false)
@@ -70,4 +68,4 @@ func _crash_sequence() -> void:
 	tween.tween_interval(1.0)
 	tween.tween_callback(get_tree().reload_current_scene)
 	explosion_audio.play()
-	print("Kaboom!")
+	explosion_particle.emitting = true
