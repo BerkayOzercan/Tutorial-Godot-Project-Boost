@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://qbb1a6ukkwy"]
+[gd_scene load_steps=11 format=3 uid="uid://qbb1a6ukkwy"]
 
 [ext_resource type="Material" uid="uid://8drumir7urrx" path="res://Materials/m_brown.tres" id="1_pq0h7"]
 [ext_resource type="Material" uid="uid://cpicv60w187ib" path="res://Materials/m_blue.tres" id="2_4bx5u"]
 [ext_resource type="Material" uid="uid://cqaq8w26ltx78" path="res://Materials/m_green.tres" id="3_yrvdu"]
 [ext_resource type="Script" path="res://Scripts/LandingPad.gd" id="4_3jxm7"]
 [ext_resource type="PackedScene" uid="uid://dic5jfwahf0yv" path="res://player.tscn" id="5_ge0da"]
+[ext_resource type="PackedScene" uid="uid://chu5pm26hd7qq" path="res://game_manager.tscn" id="6_7jyif"]
+[ext_resource type="PackedScene" uid="uid://x0ti221p4gdv" path="res://UI/score_board.tscn" id="7_vsbnt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_00s08"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -141,7 +143,6 @@ use_collision = true
 size = Vector3(2, 0.5, 2)
 material = ExtResource("2_4bx5u")
 script = ExtResource("4_3jxm7")
-level_file_path = "res://Levels/level_3.tscn"
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.970296, 0.241922, 0, -0.241922, 0.970296, 0, 7, 10)
@@ -149,3 +150,10 @@ fov = 60.0
 
 [node name="Player" parent="." instance=ExtResource("5_ge0da")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1.5, 0)
+
+[node name="GameManager" parent="." instance=ExtResource("6_7jyif")]
+unique_name_in_owner = true
+level_file_path = "res://Levels/level_3.tscn"
+
+[node name="ScoreBoard" parent="." instance=ExtResource("7_vsbnt")]
+unique_name_in_owner = true

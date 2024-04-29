@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://db7e4qqolwtx4"]
 
-[ext_resource type="Script" path="res://astreoid.gd" id="1_os5yj"]
+[ext_resource type="Script" path="res://Scripts/astreoid.gd" id="1_os5yj"]
 [ext_resource type="Material" uid="uid://dbblohdwjvsvd" path="res://Materials/m_yellow.tres" id="1_wx60k"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_4b8og"]

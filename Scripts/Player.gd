@@ -6,6 +6,8 @@ extends RigidBody3D
 ##Set the torque power value
 @export_range(50.0, 150.0) var torquePower : float = 100.0
 
+@onready var game_manager : Node3D = %"GameManager"
+
 @onready var explosion_audio : AudioStreamPlayer = $"ExplosionAudio"
 @onready var success_audio : AudioStreamPlayer = $"SuccessAudio"
 @onready var rocket_audio : AudioStreamPlayer3D = $"RocketAudio"
@@ -49,19 +51,15 @@ func _press_spacebar(delta : float) -> void:
 func _on_body_entered(body:Node) -> void:
 	if is_transitioning == false:
 		if "Goal" in body.get_groups():
-			_complete_level(body.level_file_path)
+			_complete_level()
+			
 		elif "Hazard" in body.get_groups():
 			_crash_sequence()
 	
-func _complete_level(next_level: String) -> void:
-	#set_process(false)
+func _complete_level() -> void:
 	set_physics_process(false)
+	game_manager.show_score_board(true)
 	is_transitioning = true
-	var tween = create_tween()
-	tween.tween_interval(1.0)
-	tween.tween_callback(
-		get_tree().change_scene_to_file.bind(next_level)
-	)
 	success_audio.play()
 	success_particle.emitting = true
 
