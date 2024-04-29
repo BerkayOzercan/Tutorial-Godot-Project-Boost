@@ -1,21 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://db7e4qqolwtx4"]
+[gd_scene load_steps=6 format=3 uid="uid://db7e4qqolwtx4"]
 
 [ext_resource type="Script" path="res://Scripts/astreoid.gd" id="1_os5yj"]
 [ext_resource type="Material" uid="uid://dbblohdwjvsvd" path="res://Materials/m_yellow.tres" id="1_wx60k"]
+[ext_resource type="PackedScene" uid="uid://bdypsfnwr6ato" path="res://Particles/collect_particles.tscn" id="3_k8ig0"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_4b8og"]
 material = ExtResource("1_wx60k")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_12wwi"]
 
-[node name="Node3D" type="Area3D"]
+[node name="Node3D" type="Area3D" node_paths=PackedStringArray("collect_particle", "astreoid_mesh")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 script = ExtResource("1_os5yj")
+collect_particle = NodePath("SuccessParticles")
+astreoid_mesh = NodePath("MeshInstance3D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_4b8og")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_12wwi")
+
+[node name="SuccessParticles" parent="." instance=ExtResource("3_k8ig0")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

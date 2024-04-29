@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bonlgvl1qe22r"]
+[gd_scene load_steps=13 format=3 uid="uid://bonlgvl1qe22r"]
 
 [ext_resource type="Material" uid="uid://8drumir7urrx" path="res://Materials/m_brown.tres" id="1_fd6wq"]
 [ext_resource type="Material" uid="uid://cpicv60w187ib" path="res://Materials/m_blue.tres" id="2_a27yo"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://gi50blwd6am5" path="res://Obstacles/moving_hazard.tscn" id="6_m38wt"]
 [ext_resource type="PackedScene" uid="uid://chu5pm26hd7qq" path="res://game_manager.tscn" id="7_afn50"]
 [ext_resource type="PackedScene" uid="uid://x0ti221p4gdv" path="res://UI/score_board.tscn" id="8_kbglr"]
+[ext_resource type="PackedScene" uid="uid://db7e4qqolwtx4" path="res://astreoid.tscn" id="9_cjl8n"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f1mwb"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -174,3 +175,21 @@ level_file_path = "res://Levels/level_1.tscn"
 
 [node name="ScoreBoard" parent="." instance=ExtResource("8_kbglr")]
 unique_name_in_owner = true
+
+[node name="Node3D" parent="." instance=ExtResource("9_cjl8n")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.6663, 2.46741, 0)
+
+[node name="Node3D2" parent="." instance=ExtResource("9_cjl8n")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.6663, 6.12046, 0)
+
+[node name="Node3D3" parent="." instance=ExtResource("9_cjl8n")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.11493, 6.12046, 0)
+
+[node name="Node3D4" parent="." instance=ExtResource("9_cjl8n")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.11493, 2.37128, 0)
+
+[node name="Node3D5" parent="." instance=ExtResource("9_cjl8n")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 5.03096, 3.94145, 0)
+
+[node name="Node3D6" parent="." instance=ExtResource("9_cjl8n")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -5.6398, 3.94145, 0)

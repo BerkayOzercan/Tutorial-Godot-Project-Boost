@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://qjip6psuver"]
+[gd_scene load_steps=12 format=3 uid="uid://qjip6psuver"]
 
 [ext_resource type="Material" uid="uid://8drumir7urrx" path="res://Materials/m_brown.tres" id="1_gvn3g"]
 [ext_resource type="Material" uid="uid://cpicv60w187ib" path="res://Materials/m_blue.tres" id="2_lk70i"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dic5jfwahf0yv" path="res://player.tscn" id="5_6klgp"]
 [ext_resource type="PackedScene" uid="uid://chu5pm26hd7qq" path="res://game_manager.tscn" id="6_amphm"]
 [ext_resource type="PackedScene" uid="uid://x0ti221p4gdv" path="res://UI/score_board.tscn" id="7_qc20f"]
+[ext_resource type="PackedScene" uid="uid://db7e4qqolwtx4" path="res://astreoid.tscn" id="8_yrvn6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jd8p4"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -175,3 +176,30 @@ level_file_path = "res://Levels/level_4.tscn"
 
 [node name="ScoreBoard" parent="." instance=ExtResource("7_qc20f")]
 unique_name_in_owner = true
+
+[node name="Node3D" parent="." instance=ExtResource("8_yrvn6")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -5.60006, 4.58024, 0)
+
+[node name="Node3D2" parent="." instance=ExtResource("8_yrvn6")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3.48886, 4.58024, 0)
+
+[node name="Node3D3" parent="." instance=ExtResource("8_yrvn6")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0357838, 4.58024, 0)
+
+[node name="Node3D4" parent="." instance=ExtResource("8_yrvn6")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.45115, 4.58024, 0)
+
+[node name="Node3D5" parent="." instance=ExtResource("8_yrvn6")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 5.42115, 4.58024, 0)
+
+[node name="Node3D6" parent="." instance=ExtResource("8_yrvn6")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 7.90808, 4.58024, 0)
+
+[node name="Node3D7" parent="." instance=ExtResource("8_yrvn6")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 7.90808, 4.58024, 0)
+
+[node name="Node3D8" parent="." instance=ExtResource("8_yrvn6")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.61603, 7.17229, 0)
+
+[node name="Node3D9" parent="." instance=ExtResource("8_yrvn6")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.74512, 6.45336, 0)

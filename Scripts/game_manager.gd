@@ -15,12 +15,10 @@ func _ready():
 func _process(delta) -> void:
 	if is_time_start == true:
 		time += delta
-		print(snapped(time, 0.01))
 	pass
 
 func add_point(point: int):
 	game_score += point
-	print(game_score)
 
 func  show_score_board(is_show: bool):
 	if is_show == true:
