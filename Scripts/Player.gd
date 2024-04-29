@@ -18,7 +18,7 @@ extends RigidBody3D
 
 var is_transitioning : bool = false
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	_press_spacebar(delta)
 
 func _press_spacebar(delta : float) -> void:
@@ -54,7 +54,8 @@ func _on_body_entered(body:Node) -> void:
 			_crash_sequence()
 	
 func _complete_level(next_level: String) -> void:
-	set_process(false)
+	#set_process(false)
+	set_physics_process(false)
 	is_transitioning = true
 	var tween = create_tween()
 	tween.tween_interval(1.0)
@@ -65,7 +66,8 @@ func _complete_level(next_level: String) -> void:
 	success_particle.emitting = true
 
 func _crash_sequence() -> void:
-	set_process(false)
+	#set_process(false)
+	set_physics_process(false)
 	is_transitioning = true
 	var tween = create_tween()
 	tween.tween_interval(1.0)
