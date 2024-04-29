@@ -42,6 +42,9 @@ func _press_spacebar(delta : float) -> void:
 		booster_particle_right.emitting = true
 	else:
 		booster_particle_right.emitting = false
+	
+	if Input.is_action_just_pressed("game_close"):
+		get_tree().quit()
 
 func _on_body_entered(body:Node) -> void:
 	if is_transitioning == false:

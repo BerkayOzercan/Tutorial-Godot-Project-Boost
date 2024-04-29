@@ -6,8 +6,8 @@
 [ext_resource type="AudioStream" uid="uid://nouph6l78842" path="res://Sounds/SFX - Success.ogg" id="3_ps70y"]
 [ext_resource type="AudioStream" uid="uid://b8wv4axrshkad" path="res://Sounds/SFX - Main engine thrust.ogg" id="4_jpj5b"]
 [ext_resource type="PackedScene" uid="uid://ux6ivcx1ovdp" path="res://Particles/booster_particles.tscn" id="5_6tfr7"]
-[ext_resource type="PackedScene" path="res://Particles/explosion_particles.tscn" id="6_ucbua"]
-[ext_resource type="PackedScene" path="res://Particles/success_particles.tscn" id="7_j5awg"]
+[ext_resource type="PackedScene" uid="uid://dcecb8hw7dbrv" path="res://Particles/explosion_particles.tscn" id="6_ucbua"]
+[ext_resource type="PackedScene" uid="uid://jfwajmrh6ca7" path="res://Particles/success_particles.tscn" id="7_j5awg"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_djy3p"]
 top_radius = 0.0
@@ -94,7 +94,7 @@ material_override = ExtResource("2_7shau")
 mesh = SubResource("CylinderMesh_wec2c")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="MeshInstance3D"]
-transform = Transform3D(0.4, 0, 0, 0, 0.5, 0, 0, 0, 0.4, 0, -0.210669, 0)
+transform = Transform3D(0.4, 0, 0, 0, 0.5, 0, 0, 0, 0.4, 0, -0.317637, 0)
 material_override = ExtResource("2_7shau")
 mesh = SubResource("TorusMesh_4q7oq")
 
