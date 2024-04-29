@@ -27,7 +27,7 @@ cache/0/20/0/kerning_overrides/20/0 = Vector2(0, 0)
 font = SubResource("FontFile_275wx")
 font_size = 20
 
-[node name="ScoreBoard" type="Control"]
+[node name="ScoreBoard" type="Control" node_paths=PackedStringArray("collected_label", "time_label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -35,6 +35,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bfeqi")
+collected_label = NodePath("ColorRect/Collected")
+time_label = NodePath("ColorRect/Time")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -69,7 +71,7 @@ text = "99 Collected"
 label_settings = SubResource("LabelSettings_d1e6g")
 horizontal_alignment = 1
 
-[node name="Collected2" type="Label" parent="ColorRect"]
+[node name="Time" type="Label" parent="ColorRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

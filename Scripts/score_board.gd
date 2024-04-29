@@ -1,9 +1,15 @@
 extends Control
 
 @onready var game_manager : Node = %"GameManager"
+@export var collected_label : Label
+@export var time_label : Label
 
 func _ready() -> void:
 	self.hide()
+
+func set_scores():
+	collected_label.text = "COLLECTED: " + str(game_manager.game_score)
+	time_label.text = "TIME: " + str(snapped(game_manager.time, 0.01))
 
 func _on_button_pressed() -> void:
 	var tween = create_tween()
