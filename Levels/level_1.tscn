@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://cybncl84c58pv"]
+[gd_scene load_steps=11 format=3 uid="uid://cybncl84c58pv"]
 
 [ext_resource type="Material" uid="uid://8drumir7urrx" path="res://Materials/m_brown.tres" id="1_lp6uf"]
 [ext_resource type="Material" uid="uid://cpicv60w187ib" path="res://Materials/m_blue.tres" id="2_uyx5h"]
 [ext_resource type="Material" uid="uid://cqaq8w26ltx78" path="res://Materials/m_green.tres" id="3_l2mo3"]
 [ext_resource type="Script" path="res://Scripts/LandingPad.gd" id="4_x122y"]
 [ext_resource type="PackedScene" uid="uid://dic5jfwahf0yv" path="res://player.tscn" id="5_a3b1i"]
+[ext_resource type="Script" path="res://Scripts/game_manager.gd" id="6_xnned"]
+[ext_resource type="PackedScene" uid="uid://db7e4qqolwtx4" path="res://astreoid.tscn" id="7_syvkh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_14uw7"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -143,3 +145,19 @@ fov = 60.0
 
 [node name="Player" parent="." instance=ExtResource("5_a3b1i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1.5, 0)
+
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("6_xnned")
+
+[node name="Node3D" parent="." instance=ExtResource("7_syvkh")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3.82742, 5.91071, 0)
+
+[node name="Node3D2" parent="." instance=ExtResource("7_syvkh")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.17815, 4.75773, 0)
+
+[node name="Node3D3" parent="." instance=ExtResource("7_syvkh")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.90765, 4.1151, 0)
+
+[node name="Node3D4" parent="." instance=ExtResource("7_syvkh")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4.52633, 2.59524, 0)
