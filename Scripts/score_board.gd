@@ -1,6 +1,6 @@
 extends Control
 
-@onready var game_manager : Node3D = %"GameManager"
+@onready var game_manager : Node = %"GameManager"
 
 func _ready() -> void:
 	self.hide()

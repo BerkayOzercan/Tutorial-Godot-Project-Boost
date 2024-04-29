@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_hckpp"]
 
-[node name="GameManager" type="Node3D"]
+[node name="GameManager" type="Node"]
 script = ExtResource("1_hckpp")

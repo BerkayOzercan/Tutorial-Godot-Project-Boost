@@ -6,7 +6,7 @@ extends RigidBody3D
 ##Set the torque power value
 @export_range(50.0, 150.0) var torquePower : float = 100.0
 
-@onready var game_manager : Node3D = %"GameManager"
+@onready var game_manager :  = %"GameManager"
 
 @onready var explosion_audio : AudioStreamPlayer = $"ExplosionAudio"
 @onready var success_audio : AudioStreamPlayer = $"SuccessAudio"
